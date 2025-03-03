@@ -1,0 +1,148 @@
+# india@pnldev [16:08:39] ~/proj/CAM008_rnaseq_2017Dec_n50_India $
+git add README.txt 
+
+# india@pnldev [16:09:53] ~/proj/CAM008_rnaseq_2017Dec_n50_India $
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   fastqcAllRaw/1007/mhqeivxo04.L5.Sucher/1007.fq.gz.fastqc.d/1007_fastqc.html
+	modified:   fastqcAllRaw/1007/mhqeivxo04.L5.Sucher/1007.fq.gz.fastqc.d/1007_fastqc.zip
+	modified:   fastqcAllRaw/1007/mhqeivxo04.L5.Sucher/doFastqcOne.sh.log
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	doFastqcOne.sh.log
+	fastqcAllRaw/1007/h00zjinqky.L2.Sucher/
+	fastqcAllRaw/1007/n3h03nx54.L6.Sucher/
+	fastqcAllRaw/1007/wcxvncsmub.L1.Sucher/
+
+
+# india@pnldev [16:09:59] ~/proj/CAM008_rnaseq_2017Dec_n50_India $
+git commit -m "id 1007 FastQC raw"
+[master 91e458f] id 1007 FastQC raw
+ 1 file changed, 98 insertions(+), 5 deletions(-)
+
+# india@pnldev [16:10:46] ~/proj/CAM008_rnaseq_2017Dec_n50_India $
+git push origin master
+Counting objects: 3, done.
+Delta compression using up to 28 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.45 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To /songlab/proj/git/CAM008_rnaseq_2017Dec_n50_India.git
+   fcb99d4..91e458f  master -> master
+
+# india@pnldev [16:10:56] ~/proj/CAM008_rnaseq_2017Dec_n50_India $
+WORKD=/scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/
+
+# india@pnldev [16:38:02] ~/proj/CAM008_rnaseq_2017Dec_n50_India $
+cd $WORKD
+
+# india@pnldev [16:38:09] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq $
+ls
+doTrimmotaticAll.sh  h00zjinqky.L2.Sucher  n3h03nx54.L6.Sucher
+gz.list		     mhqeivxo04.L5.Sucher  wcxvncsmub.L1.Sucher
+
+# india@pnldev [16:38:12] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq $
+cd h00zjinqky.L2.Sucher/
+
+# india@pnldev [16:38:20] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher $
+ls
+1007  1083  1092  1165	1291  1316	   1348  1442  1518  1567  1632  1668  1731
+1032  1086  1095  1177	1293  1317	   1351  1444  1521  1628  1633  1684  1752
+1036  1088  1113  1230	1299  1336	   1388  1451  1550  1630  1654  1692  1753
+1047  1091  1162  1234	1314  1336-totRNA  1397  1515  1560  1631  1656  1705  Undetermined
+
+# india@pnldev [16:38:22] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher $
+cd 1007
+
+# india@pnldev [16:38:28] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+ls
+doTrimmoOne.sh
+
+# india@pnldev [16:38:29] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+./doTrimmoOne.sh 
++ /usr/bin/java -jar /home/kord/src/Trimmomatic-0.36/trimmomatic-0.36.jar SE  
+Usage: 
+       PE [-version] [-threads <threads>] [-phred33|-phred64] [-trimlog <trimLogFile>] [-quiet] [-validatePairs] [-basein <inputBase> | <inputFile1> <inputFile2>] [-baseout <outputBase> | <outputFile1P> <outputFile1U> <outputFile2P> <outputFile2U>] <trimmer1>...
+   or: 
+       SE [-version] [-threads <threads>] [-phred33|-phred64] [-trimlog <trimLogFile>] [-quiet] <inputFile> <outputFile> <trimmer1>...
+   or: 
+       -version
+./doTrimmoOne.sh: 4: ./doTrimmoOne.sh: cannot create trimmomatic.log: Permission denied
++ -threads 6 -phred33 /songlab/data/ucsf/CAM007_CIN/Davis_RNAseq_17Dec_n50/h00zjinqky/UnalignedL2/Project_KKAS_L2_H1152P_Sucher/1007_S1_L002_R1_001.fastq.gz 1007_S1_L002_R1_001.trim.fq.gz ILLUMINACLIP:/home/kord/src/Trimmomatic-0.36/adapters/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 HEADCROP:10
+./doTrimmoOne.sh: 4: ./doTrimmoOne.sh: -threads: not found
+
+# india@pnldev [16:38:39] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+cd $WORKD
+
+# india@pnldev [16:40:25] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq $
+cd h00zjinqky.L2.Sucher/
+
+# india@pnldev [16:40:38] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher $
+cd 1007
+
+# india@pnldev [16:40:43] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+ls
+doTrimmoOne.sh
+
+# india@pnldev [16:40:45] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+./doTrimmoOne.sh 
+./doTrimmoOne.sh: 3: ./doTrimmoOne.sh: cannot create trimmomatic.log: Permission denied
++ /usr/bin/java -jar /home/kord/src/Trimmomatic-0.36/trimmomatic-0.36.jar SE -threads 6 -phred33 /songlab/data/ucsf/CAM007_CIN/Davis_RNAseq_17Dec_n50/h00zjinqky/UnalignedL2/Project_KKAS_L2_H1152P_Sucher/1007_S1_L002_R1_001.fastq.gz 1007_S1_L002_R1_001.trim.fq.gz ILLUMINACLIP:/home/kord/src/Trimmomatic-0.36/adapters/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 HEADCROP:10
+
+# india@pnldev [16:40:50] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+cd $WORKD
+
+# india@pnldev [16:41:12] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq $
+cd h00zjinqky.L2.Sucher/
+
+# india@pnldev [16:41:18] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher $
+cd 1007
+
+# india@pnldev [16:41:21] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+ls
+doTrimmoOne.sh
+
+# india@pnldev [16:41:23] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+./doTrimmoOne.sh 
++ /usr/bin/java -jar /home/kord/src/Trimmomatic-0.36/trimmomatic-0.36.jar SE -threads 6 -phred33 /songlab/data/ucsf/CAM007_CIN/Davis_RNAseq_17Dec_n50/h00zjinqky/UnalignedL2/Project_KKAS_L2_H1152P_Sucher/1007_S1_L002_R1_001.fastq.gz 1007_S1_L002_R1_001.trim.fq.gz ILLUMINACLIP:/home/kord/src/Trimmomatic-0.36/adapters/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 HEADCROP:10
+
+# india@pnldev [16:42:42] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+ls
+1007_S1_L002_R1_001.trim.fq.gz	doTrimmoOne.sh	trimmomatic.log
+
+# india@pnldev [16:44:33] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+cat trimmomatic.log 
+TrimmomaticSE: Started with arguments:
+ -threads 6 -phred33 /songlab/data/ucsf/CAM007_CIN/Davis_RNAseq_17Dec_n50/h00zjinqky/UnalignedL2/Project_KKAS_L2_H1152P_Sucher/1007_S1_L002_R1_001.fastq.gz 1007_S1_L002_R1_001.trim.fq.gz ILLUMINACLIP:/home/kord/src/Trimmomatic-0.36/adapters/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 HEADCROP:10
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+ILLUMINACLIP: Using 0 prefix pairs, 2 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Input Reads: 6093562 Surviving: 6037680 (99.08%) Dropped: 55882 (0.92%)
+TrimmomaticSE: Completed successfully
+
+# india@pnldev [16:44:39] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+ls
+1007_S1_L002_R1_001.trim.fq.gz	doTrimmoOne.sh	trimmomatic.log
+
+# india@pnldev [16:45:47] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+ls -l
+total 213128
+-rwxrwxr-x 1 india songlab 218233782 Jun 17 16:42 1007_S1_L002_R1_001.trim.fq.gz
+-rwxrwxr-x 1 kord  songlab       492 Jun 17 16:39 doTrimmoOne.sh
+-rwxrwxr-x 1 india songlab       724 Jun 17 16:42 trimmomatic.log
+
+# india@pnldev [16:45:50] /scratch/CAM008_rnaseq_2017Dec_n50.work/adapterTrim/fq/h00zjinqky.L2.Sucher/1007 $
+du -sh 1007_S1_L002_R1_001.trim.fq.gz 
+209M	1007_S1_L002_R1_001.trim.fq.gz
